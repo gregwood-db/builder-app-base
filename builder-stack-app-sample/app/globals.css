@@ -1,0 +1,92 @@
+/* Global styles with Databricks theme colors for light and dark modes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Databricks light theme */
+    --background: 36 29% 97%; /* #FAF8F5 */
+    --foreground: 196 36% 16%; /* #1A3037 */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 196 36% 16%; /* #1A3037 */
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 196 36% 16%; /* #1A3037 */
+    --primary: 11 65% 49%; /* #CE4A2C */
+    --primary-foreground: 210 21% 93%; /* #E9EDF1 */
+    --secondary: 48 13% 92%; /* #EDECE8 */
+    --secondary-foreground: 196 36% 16%; /* #1A3037 */
+    --muted: 48 13% 92%; /* #EDECE8 */
+    --muted-foreground: 196 36% 16%; /* #1A3037 */
+    --accent: 11 85% 52%; /* #ED431D */
+    --accent-foreground: 210 21% 93%; /* #E9EDF1 */
+    --success: 160 100% 26%; /* #008558 */
+    --success-foreground: 210 21% 93%; /* #E9EDF1 */
+    --destructive: 0 70% 50%; /* #D92626 */
+    --destructive-foreground: 210 21% 93%; /* #E9EDF1 */
+    --border: 48 13% 87%; /* #E2E0DA */
+    --input: 48 13% 87%; /* #E2E0DA */
+    --ring: 11 100% 57% / 0.30; /* #FF4C24 */
+    --chart-1: 11 100% 57%; /* #FF4C24 */
+    --chart-2: 160 100% 33%; /* #00A870 */
+    --chart-3: 40 100% 50%; /* #FFAA00 */
+    --chart-4: 196 36% 16%; /* #1A3037 */
+    --chart-5: 300 40% 50%; /* #B34DB3 */
+    --radius: 0.5rem;
+    --sidebar-background: 48 13% 92%; /* #EDECE8 */
+    --sidebar-foreground: 196 36% 16%; /* #1A3037 */
+    --sidebar-primary: 11 100% 57%; /* #FF4C24 */
+    --sidebar-primary-foreground: 196 36% 16%; /* #1A3037 */
+    --sidebar-accent: 11 100% 57% / 0.10; /* #FF4C24 */
+    --sidebar-accent-foreground: 196 36% 16%; /* #1A3037 */
+    --sidebar-border: 48 13% 87%; /* #E2E0DA */
+    --sidebar-ring: 11 100% 57%; /* #FF4C24 */
+  }
+
+  .dark {
+    /* Databricks dark theme */
+    --background: 207 24% 9%; /* #11181C */
+    --foreground: 210 21% 93%; /* #E9EDF1 */
+    --card: 207 24% 12%; /* #171F26 */
+    --card-foreground: 210 21% 93%; /* #E9EDF1 */
+    --popover: 207 24% 14%; /* #1B252C */
+    --popover-foreground: 210 21% 93%; /* #E9EDF1 */
+    --primary: 11 65% 49%; /* #CE4A2C */
+    --primary-foreground: 210 21% 93%; /* #E9EDF1 */
+    --secondary: 207 20% 18%; /* #252F37 */
+    --secondary-foreground: 210 21% 88%; /* #DAE0E7 */
+    --muted: 207 20% 18%; /* #252F37 */
+    --muted-foreground: 210 15% 70%; /* #A7B3BE */
+    --accent: 11 85% 52%; /* #ED431D */
+    --accent-foreground: 210 21% 93%; /* #E9EDF1 */
+    --success: 160 100% 26%; /* #008558 */
+    --success-foreground: 210 21% 93%; /* #E9EDF1 */
+    --destructive: 0 70% 50%; /* #D92626 */
+    --destructive-foreground: 210 21% 93%; /* #E9EDF1 */
+    --border: 207 20% 22%; /* #2D3943 */
+    --input: 207 24% 16%; /* #1F2A33 */
+    --ring: 11 100% 57% / 0.30; /* #FF4C24 */
+    --chart-1: 11 100% 57%; /* #FF4C24 */
+    --chart-2: 160 70% 45%; /* #22C38E */
+    --chart-3: 40 90% 55%; /* #F4AF25 */
+    --chart-4: 207 50% 60%; /* #669ECC */
+    --chart-5: 280 60% 60%; /* #AD5CD6 */
+    --sidebar-background: 206 18% 15%; /* #1F272D */
+    --sidebar-foreground: 210 21% 88%; /* #DAE0E7 */
+    --sidebar-primary: 11 100% 57%; /* #FF4C24 */
+    --sidebar-primary-foreground: 210 21% 93%; /* #E9EDF1 */
+    --sidebar-accent: 11 100% 57% / 0.10; /* #FF4C24 */
+    --sidebar-accent-foreground: 210 21% 88%; /* #DAE0E7 */
+    --sidebar-border: 206 18% 25%; /* #34414B */
+    --sidebar-ring: 11 100% 57%; /* #FF4C24 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

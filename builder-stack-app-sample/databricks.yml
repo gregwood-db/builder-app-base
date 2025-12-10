@@ -1,0 +1,59 @@
+bundle:
+  name: builder-stack-app-sample
+
+targets:
+  dev:
+    mode: development
+    default: true
+  staging:
+    mode: production
+  prod:
+    mode: production
+
+resources:
+  database_instances:
+    app_db:
+      name: ${bundle.name}-${bundle.target}
+      capacity: CU_1
+
+  database_catalogs:
+    app_catalog:
+      # This catalog will be managed by the Lakebase instance.
+      name: ${bundle.name}-catalog-${bundle.target}
+      database_instance_name: ${resources.database_instances.app_db.name}
+      database_name: databricks_postgres #The default database name for Databricks Postgres
+      create_database_if_not_exists: true
+
+  # -------------------------------------------------------------------------
+  # Synced Tables (Optional)
+  # -------------------------------------------------------------------------
+  # Uncomment the block below to sync tables from Unity Catalog to Lakebase.
+  # Limitation: As of Dec 2025, Your Unity Catalog metastore need to have a default storage location configured.
+
+  # synced_database_tables:
+  #   customer_sync:
+  #     name: ${resources.database_catalogs.app_catalog.name}.${resources.database_catalogs.app_catalog.database_name}.customer_sync
+  #     database_instance_name: ${resources.database_instances.app_db.name}
+  #     logical_database_name: ${resources.database_catalogs.app_catalog.database_name}
+  #     spec:
+  #       source_table_full_name: samples.tpch.customer
+  #       scheduling_policy: TRIGGERED
+  #       primary_key_columns:
+  #         - c_custkey
+
+  apps:
+    main_app:
+      name: ${bundle.name}-${bundle.target}
+      description: "Builder Stack App Instance (${bundle.target})"
+      source_code_path: .
+      
+      permissions:
+        - level: CAN_USE
+          group_name: users
+
+      resources:
+        - name: app_db_binding
+          database:
+            instance_name: ${resources.database_instances.app_db.name}
+            database_name: ${resources.database_catalogs.app_catalog.database_name}
+            permission: CAN_CONNECT_AND_CREATE

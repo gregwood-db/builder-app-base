@@ -1,0 +1,13 @@
+command:
+  - "gunicorn"
+  - "backend.main:app"
+  - "-w"
+  - "4"
+  - "--worker-class"
+  - "uvicorn.workers.UvicornWorker"
+  - "--log-level"
+  - "info"
+
+env:
+  - name: LOG_LEVEL
+    value: INFO
