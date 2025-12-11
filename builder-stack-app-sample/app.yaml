@@ -2,7 +2,7 @@ command:
   - "gunicorn"
   - "backend.main:app"
   - "-w"
-  - "4"
+  - "2" # Number of workers for Gunicorn 2 for medium and 4 for large apps
   - "--worker-class"
   - "uvicorn.workers.UvicornWorker"
   - "--log-level"

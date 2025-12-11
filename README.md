@@ -9,8 +9,8 @@ A clean starter template for building Full-Stack Databricks Apps with Next.js, R
 builder-stack-app-sample/
 ├── app/                    # Next.js 15 App Router
 │   ├── layout.tsx         # Root layout with theme provider
-│   ├── page.tsx           # Dashboard with data panel & code examples
-│   ├── catalog/page.tsx   # Example catalog page with instructions
+│   ├── page.tsx           # Dashboard with tech specs, live API demo & code examples
+│   ├── catalog/page.tsx   # Example data explorer page with instructions
 │   └── globals.css        # Databricks theme colors
 ├── components/            # Reusable React components
 │   ├── header.tsx         # Top header with user info & theme toggle
@@ -78,7 +78,7 @@ databricks bundle run main_app -t dev
 - **User Authentication**: Reads user info from HTTP headers (`X-Forwarded-Email`, `X-Forwarded-Preferred-Username`)
 - **Sidebar Navigation**: Mobile-responsive sidebar with backend status indicator
 - **Backend Integration**: FastAPI with health check, user info, and Databricks SDK examples
-- **Demo Components**: Interactive Lakebase instances table with live data fetching
+- **Live Demo**: Interactive Lakebase instances table with live data fetching & code view
 - **shadcn/ui Components**: Pre-configured UI component library
 - **Type Safety**: Full TypeScript support
 - **Apps Gallery Link**: Direct link to Databricks Apps showcase for inspiration

@@ -10,7 +10,7 @@ import { useState, useEffect } from "react"
 
 const navigationItems = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/catalog", label: "Catalog", icon: FileText },
+  { href: "/catalog", label: "Data Explorer", icon: FileText },
 ]
 
 function useBackendStatus() {
